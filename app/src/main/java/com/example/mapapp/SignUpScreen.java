@@ -2,7 +2,9 @@ package com.example.mapapp;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +29,7 @@ public class SignUpScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_screen);  // Corrected the layout reference
+        setContentView(R.layout.activity_sign_up_screen);
 
         nameEditText = findViewById(R.id.nameEditText);
         rollNumberEditText = findViewById(R.id.rollNumberEditText);
@@ -74,6 +76,16 @@ public class SignUpScreen extends AppCompatActivity {
             @Override
             public void onResponse(Call<DataModel> call, Response<DataModel> response) {
                 showDialog("Success", "User registered successfully!");
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // After 3 seconds, this code will run
+                        Intent intent = new Intent(SignUpScreen.this, MainActivity.class);
+                        startActivity(intent);
+                        finish(); // Close the SignUpScreen
+                    }
+                }, 3000);  // 3000 milliseconds = 3 seconds
             }
 
             @Override
