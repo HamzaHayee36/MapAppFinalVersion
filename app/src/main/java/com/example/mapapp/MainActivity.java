@@ -1,13 +1,13 @@
 package com.example.mapapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,19 +17,29 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText;
     private Button signInButton;
+    private TextView combinedTextView;  // Added this line for the TextView
     private Retrofit retrofit;
     private ApiService apiService;
-
     private final String BASE_URL = "https://map-backend-1.onrender.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);  // Assuming this XML is named activity_login.xml
+        setContentView(R.layout.activity_main);
 
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         signInButton = findViewById(R.id.signInButton);
+
+        // Initialize the TextView and set OnClickListener
+        combinedTextView = findViewById(R.id.combinedTextView);
+        combinedTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignUpScreen.class);
+                startActivity(intent);
+            }
+        });
 
         // Initialize Retrofit
         retrofit = new Retrofit.Builder()

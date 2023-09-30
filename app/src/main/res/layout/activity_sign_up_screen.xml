@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".SignUpScreen">
+
+    <LinearLayout
+        android:id="@+id/greyBoxSignUp"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="#E8E9EB"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header Layout -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <!-- Map App Text -->
+            <TextView
+                android:id="@+id/mapAppTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Map App"
+                android:textColor="#007FFF"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Sign In Text -->
+            <TextView
+                android:id="@+id/signInHeaderTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Sign Up"
+                android:textColor="#000000"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Name Field -->
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@drawable/edit_text_boundary"
+            android:paddingStart="16dp"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <!-- Roll Number Field -->
+        <EditText
+            android:id="@+id/rollNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_boundary"
+            android:paddingStart="16dp"
+            android:hint="Roll Number"
+            android:inputType="text" />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/emailSignUpEditText"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_boundary"
+            android:paddingStart="16dp"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/passwordSignUpEditText"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_boundary"
+            android:paddingStart="16dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <!-- Sign Up Button -->
+        <Button
+            android:id="@+id/doSignUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#007FFF"
+            android:text="Sign Up" />
+        <TextView
+            android:id="@+id/combinedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+
+            android:text="Already have an Account? Sign In"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</RelativeLayout>
