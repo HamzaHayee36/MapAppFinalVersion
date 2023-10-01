@@ -1,16 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Theme.MapApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="android:textColorPrimary">@color/blue</item>
+        <!--        <item name="android:textSize">28sp</item>-->
+        <!--        <item name="android:textStyle">bold</item>-->
         <item name="colorOnPrimary">@color/white</item>
+
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/greywhite</item>
+
+        <!-- Customizing your theme. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
+
+    <!-- AppBarOverlay style for the app bar -->
+    <style name="Theme.MyApplicationScreens.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- PopupOverlay style for the pop-up menu in the app bar -->
+    <style name="Theme.MyApplicationScreens.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

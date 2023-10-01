@@ -1,0 +1,113 @@
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main content including the Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="#E8E9EB">
+
+            <LinearLayout
+                android:id="@+id/profileContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Bell Icon with white circle background -->
+                <ImageView
+                    android:id="@+id/bell_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/bellicon"
+                    android:background="@drawable/white_circle"
+                    android:padding="10dp" />
+
+                <!-- New Arrow Icon with added margin -->
+                <ImageView
+                    android:id="@+id/newarrow_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/arrow_down_float"
+                    android:layout_marginEnd="16dp" />
+
+                <ImageView
+                    android:id="@+id/profile_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/profile" />
+
+                <ImageView
+                    android:id="@+id/arrow_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/arrow_down_float" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Notifications Container -->
+        <LinearLayout
+            android:id="@+id/notifications_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:orientation="vertical"
+            android:background="#ffffff"
+            android:visibility="gone"
+            android:divider="@android:color/black"
+            android:showDividers="middle"
+            android:dividerPadding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notification 1"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notification 2"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notification 3"
+                android:padding="8dp" />
+        </LinearLayout>
+
+
+        <!-- Google Maps Fragment -->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <!-- NavigationView for the drawer menu -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_header"
+        app:itemTextColor="@android:color/black" />
+</androidx.drawerlayout.widget.DrawerLayout>

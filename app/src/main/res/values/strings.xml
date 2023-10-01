@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">MapApp</string>
+    <string name="app_name">Map App</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="nav_header_title" />
+    <string name="nav_header_subtitle" />
+    <string name="nav_header_desc" />
+    <string name="profile_icon" />
+    <string name="nav_header_description" />
 </resources>

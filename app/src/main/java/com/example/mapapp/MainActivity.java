@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,9 +19,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
     private EditText emailEditText, passwordEditText;
     private Button signInButton;
-    private TextView combinedTextView;  // Added this line for the TextView
+    private TextView combinedTextView;
     private Retrofit retrofit;
     private ApiService apiService;
+
     private final String BASE_URL = "https://map-backend-1.onrender.com/";
 
     @Override
@@ -31,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         signInButton = findViewById(R.id.signInButton);
 
-        // Initialize the TextView and set OnClickListener
         combinedTextView = findViewById(R.id.combinedTextView);
         combinedTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Initialize Retrofit
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -71,9 +72,11 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.isSuccessful()) {
                     UserResponse userResponse = response.body();
-                    // Handle the response, for example:
                     String token = userResponse.getToken();
                     Toast.makeText(MainActivity.this, "Login Successful! Token: " + token, Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(MainActivity.this, Profile.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, "Login Failed. Check credentials.", Toast.LENGTH_SHORT).show();
                 }

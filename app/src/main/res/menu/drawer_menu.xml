@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu"
+            android:title="Notification" />
+        <item
+            android:id="@+id/StaffDet"
+            android:icon="@drawable/ic_menu"
+            android:title="Staff Detail"/>
+        <item
+            android:id="@+id/Req"
+            android:icon="@drawable/ic_menu"
+            android:title="Student Request"/>
+        <item
+            android:id="@+id/Event"
+            android:icon="@drawable/ic_menu"
+            android:title="Event Details"/>
+        <item
+            android:id="@+id/Attend"
+            android:icon="@drawable/ic_menu"
+            android:title="Attendance"/>
+    </group>
+</menu>
