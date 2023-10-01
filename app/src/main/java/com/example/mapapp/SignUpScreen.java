@@ -40,7 +40,7 @@ public class SignUpScreen extends AppCompatActivity {
         doSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = nameEditText.getText().toString();
+                final String name = nameEditText.getText().toString();
                 String rollNumber = rollNumberEditText.getText().toString();
                 String email = emailSignUpEditText.getText().toString();
                 String password = passwordSignUpEditText.getText().toString();
@@ -60,7 +60,7 @@ public class SignUpScreen extends AppCompatActivity {
         });
     }
 
-    private void postData(String name, String email, String roll, String pass) {
+    private void postData(final String name, String email, String roll, String pass) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://map-backend-1.onrender.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -81,7 +81,8 @@ public class SignUpScreen extends AppCompatActivity {
                     @Override
                     public void run() {
                         // After 3 seconds, this code will run
-                        Intent intent = new Intent(SignUpScreen.this, MainActivity.class);
+                        Intent intent = new Intent(SignUpScreen.this, Profile.class);
+                        intent.putExtra("username", name);  // pass the user name
                         startActivity(intent);
                         finish(); // Close the SignUpScreen
                     }

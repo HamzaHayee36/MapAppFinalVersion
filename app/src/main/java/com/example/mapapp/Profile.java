@@ -1,12 +1,12 @@
 package com.example.mapapp;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -28,6 +28,7 @@ public class Profile extends AppCompatActivity implements OnMapReadyCallback {
     private boolean isProfileArrowUp = false;
     private boolean isBellArrowUp = false;
     private GoogleMap mMap;
+    private TextView navUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,12 @@ public class Profile extends AppCompatActivity implements OnMapReadyCallback {
         toggle.syncState();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navUsername = navigationView.getHeaderView(0).findViewById(R.id.nav_header_username);
+        String username = getIntent().getStringExtra("username");
+        if(username != null && !username.isEmpty()) {
+            navUsername.setText(username);
+        }
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -96,9 +103,9 @@ public class Profile extends AppCompatActivity implements OnMapReadyCallback {
         mMap = googleMap;
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng hctCollegeSharjah = new LatLng(25.285267197405954,  55.46964840806604);
+        mMap.addMarker(new MarkerOptions().position(hctCollegeSharjah).title("HCT College Sharjah"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hctCollegeSharjah, 18));
     }
 
     private void showPopupMenu(View view, int menuRes, final ImageView arrowIcon) {
