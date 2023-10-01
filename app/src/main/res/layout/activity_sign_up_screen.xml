@@ -50,9 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:background="@drawable/edit_text_boundary"
-            android:paddingStart="16dp"
             android:hint="Name"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:paddingStart="16dp" />
 
         <!-- Roll Number Field -->
         <EditText
@@ -61,9 +61,9 @@
             android:layout_height="67dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/edit_text_boundary"
-            android:paddingStart="16dp"
             android:hint="Roll Number"
-            android:inputType="text" />
+            android:inputType="text"
+            android:paddingStart="16dp" />
 
         <!-- Email Field -->
         <EditText
@@ -72,9 +72,9 @@
             android:layout_height="67dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/edit_text_boundary"
-            android:paddingStart="16dp"
             android:hint="Email Address"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp" />
 
         <!-- Password Field -->
         <EditText
@@ -83,9 +83,9 @@
             android:layout_height="67dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/edit_text_boundary"
-            android:paddingStart="16dp"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:paddingStart="16dp" />
 
         <!-- Sign Up Button -->
         <Button
@@ -95,6 +95,7 @@
             android:layout_marginTop="16dp"
             android:backgroundTint="#007FFF"
             android:text="Sign Up" />
+
         <TextView
             android:id="@+id/combinedTextView"
             android:layout_width="wrap_content"

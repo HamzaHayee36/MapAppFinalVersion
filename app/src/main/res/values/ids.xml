@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="profile_arrow_icon" type="id" />
+    <item name="studentDetailsTitle" type="id" />
+    <item name="degreeTextView" type="id" />
+    <item name="rollNumberTextView" type="id" />
+    <item name="mobileTextView" type="id" />
+    <item name="cityTextView" type="id" />
+    <item name="countryTextView" type="id" />
+    <item name="passportTextView" type="id" />
 </resources>

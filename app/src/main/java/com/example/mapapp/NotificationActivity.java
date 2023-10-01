@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,10 +16,21 @@ public class NotificationActivity extends AppCompatActivity {
     private boolean isProfileArrowUp = false;
     private boolean isBellArrowUp = false;
 
+    // TextViews for the extracted data
+    private TextView studentDetailsTitle;
+    private TextView studentNameLabel;
+    private TextView studentNameTextView;
+    private TextView studentRollLabel;
+    private TextView studentRollTextView;
+    private TextView studentEmailLabel;
+    private TextView studentEmailTextView;
+    private TextView studentMessage;
+    private TextView studentMessagetextview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notification);  // Assuming the layout name is activity_notification
+        setContentView(R.layout.activity_notification);
 
         // Set up the toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -43,10 +55,32 @@ public class NotificationActivity extends AppCompatActivity {
         bellIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                togglePopupMenu(v, isBellArrowUp, bellArrowIcon, R.menu.bell_menu);  // Assuming R.menu.bell_menu is the menu for notifications
+                togglePopupMenu(v, isBellArrowUp, bellArrowIcon, R.menu.bell_menu);
                 isBellArrowUp = !isBellArrowUp;
             }
         });
+
+        // Initialize the TextViews for extracted data
+        studentDetailsTitle = findViewById(R.id.studentDetailsTitle);
+        studentNameLabel = findViewById(R.id.studentNameLabel);
+        studentNameTextView = findViewById(R.id.studentNameTextView);
+        studentRollLabel = findViewById(R.id.studentRollLabel);
+        studentRollTextView = findViewById(R.id.studentRollTextView);
+        studentEmailLabel = findViewById(R.id.studentEmailLabel);
+        studentEmailTextView = findViewById(R.id.studentEmailTextView);
+        studentMessage = findViewById(R.id.studentMessage);
+        studentMessagetextview = findViewById(R.id.studentMessagetextview);
+
+        // Set the extracted text to the TextViews
+        studentDetailsTitle.setText("Notification");
+        studentNameLabel.setText("Number");
+        studentNameTextView.setText("ION 67");
+        studentRollLabel.setText("Date");
+        studentRollTextView.setText("4/15/2023 12:00:00 AM");
+        studentEmailLabel.setText("Subject");
+        studentEmailTextView.setText("Eid Holidays");
+        studentMessage.setText("Message");
+        studentMessagetextview.setText("Ministry of Interior issued a notification.");
     }
 
     // Method to toggle popup menu and handle arrow behavior

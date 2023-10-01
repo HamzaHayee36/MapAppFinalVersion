@@ -21,6 +21,7 @@
         android:layout_alignTop="@+id/nav_header_imageView"
         android:layout_marginStart="27dp"
         android:layout_marginTop="16dp"
+        android:text="Obaid"
         android:layout_toEndOf="@+id/nav_header_imageView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black" />

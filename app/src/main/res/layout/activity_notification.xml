@@ -56,6 +56,110 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- You can add additional views below the toolbar as per your requirements -->
+    <!-- Student Details Section -->
+    <TextView
+        android:id="@+id/studentDetailsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <!-- Number -->
+    <TextView
+        android:id="@+id/studentNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentDetailsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/studentNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ION 67"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentNameLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/studentRollLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Date"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentNameTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/studentRollTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4/15/2023 12:00:00 AM"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentRollLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <!-- Subject -->
+    <TextView
+        android:id="@+id/studentEmailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Subject"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentRollTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/studentEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eid Holidays"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentEmailLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <!-- Message -->
+    <TextView
+        android:id="@+id/studentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentEmailTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/studentMessagetextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ministry of Interior issued a notification."
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/studentMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
