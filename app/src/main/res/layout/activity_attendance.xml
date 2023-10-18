@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -57,4 +56,100 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- GridLayout for Attendance -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:padding="@dimen/_16sdp"
+        android:rowCount="6"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout_editor_absoluteX="34dp">
+
+        <!-- Days -->
+        <TextView
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="0.3"
+            android:layout_margin="@dimen/_8sdp"
+            android:text="Day1"
+            android:textColor="#000000"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_columnWeight="0.3"
+            android:layout_margin="@dimen/_8sdp"
+            android:text="Day2"
+            android:textColor="#000000"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_columnWeight="0.3"
+            android:layout_margin="@dimen/_8sdp"
+            android:text="Day3"
+            android:textColor="#000000"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+        <!-- Continuous Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_columnSpan="3"
+            android:background="#000000" />
+
+        <!-- Custom Spinner for Day 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:background="#E8E9EB"
+            android:layout_columnWeight="0.3"
+            android:padding="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:entries="@array/days_array" />
+        </LinearLayout>
+
+        <!-- Custom Spinner for Day 2 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:background="#E8E9EB"
+            android:layout_columnWeight="0.3"
+            android:padding="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:entries="@array/days_array" />
+        </LinearLayout>
+
+        <!-- Custom Spinner for Day 3 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:background="#E8E9EB"
+            android:layout_columnWeight="0.3"
+            android:padding="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:entries="@array/days_array" />
+        </LinearLayout>
+    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

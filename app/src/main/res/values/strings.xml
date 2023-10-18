@@ -7,4 +7,8 @@
     <string name="nav_header_desc" />
     <string name="profile_icon" />
     <string name="nav_header_description" />
+    <string-array name="days_array">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
 </resources>
