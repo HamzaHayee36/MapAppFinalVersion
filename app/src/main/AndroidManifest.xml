@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MapApp"
         tools:targetApi="31">
         <activity
+            android:name=".EventDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".AttendanceActivity"
             android:exported="false" />
         <activity

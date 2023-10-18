@@ -68,6 +68,9 @@ public class Profile extends AppCompatActivity implements OnMapReadyCallback {
                     case R.id.Attend:
                         Intent Attendance = new Intent(Profile.this,AttendanceActivity.class);
                         startActivity(Attendance);
+                    case R.id.Event:
+                        Intent Event = new Intent(Profile.this,EventDetailActivity.class);
+                        startActivity(Event);
                     default:
                         drawerLayout.closeDrawers();
                         break;
