@@ -8,7 +8,7 @@
     <string name="profile_icon" />
     <string name="nav_header_description" />
     <string-array name="days_array">
-        <item>true</item>
-        <item>false</item>
+        <item>F</item>
+        <item>T</item>
     </string-array>
 </resources>
