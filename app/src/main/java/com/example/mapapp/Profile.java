@@ -53,12 +53,19 @@ public class Profile extends AppCompatActivity implements OnMapReadyCallback {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.nav_settings) {
-                    Intent intent = new Intent(Profile.this, NotificationActivity.class);
-                    startActivity(intent);
-                    return true;
+                switch (item.getItemId()) {
+                    case R.id.StaffDet:
+                        Intent intent = new Intent(Profile.this, StaffDetailsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_settings:
+                        Intent settingsIntent = new Intent(Profile.this, NotificationActivity.class);
+                        startActivity(settingsIntent);
+                        break;
+                    default:
+                        drawerLayout.closeDrawers();
+                        break;
                 }
-                drawerLayout.closeDrawers();
                 return true;
             }
         });
@@ -103,7 +110,7 @@ public class Profile extends AppCompatActivity implements OnMapReadyCallback {
         mMap = googleMap;
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
-        LatLng hctCollegeSharjah = new LatLng(25.285267197405954,  55.46964840806604);
+        LatLng hctCollegeSharjah = new LatLng(25.285267197405954, 55.46964840806604);
         mMap.addMarker(new MarkerOptions().position(hctCollegeSharjah).title("HCT College Sharjah"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hctCollegeSharjah, 18));
     }

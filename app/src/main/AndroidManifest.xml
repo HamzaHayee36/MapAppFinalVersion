@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MapApp"
         tools:targetApi="31">
         <activity
+            android:name=".StaffDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".NotificationActivity"
             android:exported="false" />
         <activity
