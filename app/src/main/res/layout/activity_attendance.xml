@@ -56,212 +56,715 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- GridLayout for Attendance -->
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:columnCount="3"
-        android:padding="@dimen/_16sdp"
-        android:rowCount="8"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:layout_editor_absoluteX="34dp">
+    <ScrollView
+        android:layout_width="406dp"
+        android:layout_height="571dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Days -->
-        <TextView
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="0.3"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="Day1"
-            android:textColor="#000000"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_columnWeight="0.3"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="Day2"
-            android:textColor="#000000"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_columnWeight="0.3"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="Day3"
-            android:textColor="#000000"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold" />
-
-        <!-- Continuous Line -->
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_columnSpan="3"
-            android:layout_marginBottom="2dp"
-            android:background="#000000" />
-
-        <!-- Custom Spinner for Day 1 -->
-        <LinearLayout
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="#E8E9EB"
-            android:layout_columnWeight="0.35"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
+            android:orientation="vertical">
 
-            <Spinner
+            <!-- GridLayout for Attendance -->
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:entries="@array/days_array" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="3"
+                android:padding="@dimen/_16sdp"
+                android:rowCount="8"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                tools:layout_editor_absoluteX="34dp">
+
+                <!-- Days -->
+                <TextView
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day1"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day2"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day3"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+                <!-- Days 4, 5, and 6 -->
+                <TextView
+                    android:layout_row="4"
+                    android:layout_column="0"
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day4"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day5"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day6"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 5 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 6 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+
+                <!-- Days 7, 8, and 7 -->
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day7"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day8"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day9"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 7 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 8 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 9 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+                <!-- Days 10, 11, and 12 -->
+                <TextView
+                    android:layout_height="22dp"
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day10"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day11"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day12"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 7 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 8 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 9 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+
+
+
+                <!-- Days 13, 14, and 15 -->
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day13"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day14"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day15"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 7 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 8 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 9 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+
+
+                <!-- Days 16, 17, and 18 -->
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day16"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day17"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day18"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 7 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 8 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 9 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+
+
+
+                <!-- Days 19, 20, and 21 -->
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day19"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day20"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_columnWeight="0.3"
+                    android:layout_margin="@dimen/_8sdp"
+                    android:text="Day21"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <!-- Continuous Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginBottom="2dp"
+                    android:background="#000000" />
+
+                <!-- Custom Spinner for Day 7 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 8 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Custom Spinner for Day 9 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill_horizontal"
+                    android:background="#E8E9EB"
+                    android:layout_columnWeight="0.35"
+                    android:padding="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="18dp">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:textSize="12sp"
+                        android:entries="@array/days_array" />
+                </LinearLayout>
+
+                <!-- Separator Line -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_columnSpan="3"
+                    android:layout_marginTop="10dp"
+                    android:background="#E8E9EB" />
+
+            </GridLayout>
+
+
+
         </LinearLayout>
 
-        <!-- Custom Spinner for Day 2 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="#E8E9EB"
-            android:layout_columnWeight="0.35"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:entries="@array/days_array" />
-        </LinearLayout>
-
-        <!-- Custom Spinner for Day 3 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="#E8E9EB"
-            android:layout_columnWeight="0.35"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:entries="@array/days_array" />
-        </LinearLayout>
-
-        <!-- Separator Line -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_columnSpan="3"
-            android:layout_marginTop="10dp"
-            android:background="#E8E9EB" />
-
-        <!-- Days 4, 5, and 6 -->
-        <TextView
-            android:layout_row="4"
-            android:layout_column="0"
-            android:layout_columnWeight="0.3"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="Day4"
-            android:textColor="#000000"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_columnWeight="0.3"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="Day5"
-            android:textColor="#000000"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_columnWeight="0.3"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="Day6"
-            android:textColor="#000000"
-            android:textSize="@dimen/_16sdp"
-            android:textStyle="bold" />
-
-        <!-- Continuous Line -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_columnSpan="3"
-            android:layout_marginBottom="2dp"
-            android:background="#000000" />
-
-        <!-- Custom Spinner for Day 4 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="#E8E9EB"
-            android:layout_columnWeight="0.35"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:entries="@array/days_array" />
-        </LinearLayout>
-
-        <!-- Custom Spinner for Day 5 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="#E8E9EB"
-            android:layout_columnWeight="0.35"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:entries="@array/days_array" />
-        </LinearLayout>
-
-        <!-- Custom Spinner for Day 6 -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="#E8E9EB"
-            android:layout_columnWeight="0.35"
-            android:padding="2dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="18dp">
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textSize="12sp"
-                android:entries="@array/days_array" />
-        </LinearLayout>
-
-        <!-- Separator Line -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_columnSpan="3"
-            android:layout_marginTop="10dp"
-            android:background="#E8E9EB" />
+    </ScrollView>
 
 
-
-    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
