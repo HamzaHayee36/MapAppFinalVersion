@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StaffDetailsActivity">
+
     <!-- Toolbar with icons -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -55,4 +56,19 @@
                 android:src="@android:drawable/arrow_down_float" />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
+
+    <!-- TextView for Staff Details -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="28dp"
+        android:text="Staff Details"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
