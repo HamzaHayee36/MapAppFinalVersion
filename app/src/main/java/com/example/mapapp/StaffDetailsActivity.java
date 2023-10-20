@@ -1,11 +1,15 @@
 package com.example.mapapp;
 
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,8 +38,6 @@ public class StaffDetailsActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        // Initialize the RecyclerView with custom column width.
-        setupRecyclerView();
 
         // Profile icon toggle
         final ImageView profileArrowIcon = findViewById(R.id.arrow_icon);
@@ -58,119 +60,48 @@ public class StaffDetailsActivity extends AppCompatActivity {
                 isBellArrowUp = !isBellArrowUp;
             }
         });
-    }
 
-//    private void setupRecyclerView() {
-//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//
-//        List<String> dataList = new ArrayList<>();
-//        dataList.add("Name");
-//        dataList.add("Mobile");
-//        dataList.add("Department");
-//        dataList.add("Education");
-//        // ... add more data if needed ...
-//
-//        GridLayoutManager layoutManager = new GridLayoutManager(this, 6); // 6 spans
-//
-//        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-//            @Override
-//            public int getSpanSize(int position) {
-//                switch (position % 4) {
-//                    case 0: // First column
-//                    case 1: // Second column
-//                        return 1;
-//                    case 3: // Fourth column
-//                    case 2: // Third column (Department)
-//                        return 2; // Takes up 2 spans
-//                    default:
-//                        return 1; // Default
-//                }
-//            }
-//        });
-//
-//        recyclerView.setLayoutManager(layoutManager);
-//        recyclerView.setAdapter(new CustomAdapter(dataList));
-//    }
-        private void setupRecyclerView() {
-            RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
-            List<String> dataList = new ArrayList<>();
-            // Header row
-            dataList.add("Name");
-            dataList.add("Mobile");
-            dataList.add("Department");
-            dataList.add("Education");
+        GridLayout gridLayout = findViewById(R.id.gridLayout);
 
-            // Ali Raza
-            dataList.add("Ali Raza");
-            dataList.add("555 474 28374");
-            dataList.add("CS");
-            dataList.add("Mphil");
+        String[][] data = {
+                {"Name", "Mobile", "Department", "Education"},
+                {"Ali Raza", "555\n474\n28374", "CS", "Mphil"},
+                {"Hassan", "555\n474\n46782", "SE", "MSCS"},
+                {"Amna", "555\n474\n94782", "CS", "Mphil"},
+                {"Sadia", "555\n474\n94782", "CS", "MSCS"},
+                {"Hussain", "555\n474\n94782", "CS", "Mphil"}
+        };
 
-            // Hassan
-            dataList.add("Hassan");
-            dataList.add("555 474 46782");
-            dataList.add("SE");
-            dataList.add("MSCS");
-
-            // Amna
-            dataList.add("Amna");
-            dataList.add("555 474 94782");
-            dataList.add("CS");
-            dataList.add("Mphil");
-
-            // Sadia
-            dataList.add("Sadia");
-            dataList.add("555 474 94782");
-            dataList.add("CS");
-            dataList.add("MSCS");
-
-            // Hussain
-            dataList.add("Hussain");
-            dataList.add("555 474 94782");
-            dataList.add("CS");
-            dataList.add("Mphil");
-
-            GridLayoutManager layoutManager = new GridLayoutManager(this, 6); // 4 spans since you have 4 columns
-
-            layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-                @Override
-                public int getSpanSize(int position) {
-                    switch (position % 4) {
-                        case 2: // Third column (Department)
-                        case 3: // Fourth column (Education)
-                            return 2;
-                        case 0: // Name
-                        case 1: // Mobile
-                            return 1; // Takes up 1 span
-                        default:
-                            return 1; // Default
-                    }
-                }
-            });
-
-            recyclerView.setLayoutManager(layoutManager);
-            int[] spacings = {-30, 0, 10, 10};  // Example spacings
-            recyclerView.addItemDecoration(new CustomItemDecoration(spacings));
-            recyclerView.setAdapter(new CustomAdapter(dataList));
-    }
-    public class CustomItemDecoration extends RecyclerView.ItemDecoration {
-        private int[] spacings;
-
-        public CustomItemDecoration(int[] spacings) {
-            this.spacings = spacings;
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                TextView textView = new TextView(this);
+                textView.setText(data[i][j]);
+                textView.setPadding(8, 8, 8, 8);
+                textView.setGravity(Gravity.CENTER);
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                params.setGravity(Gravity.FILL_HORIZONTAL);
+                params.bottomMargin = 16; // Added vertical margin between rows
+                textView.setLayoutParams(params);
+                gridLayout.addView(textView);
+            }
+            // Add a dark grey separator line after every row, except the last one
+            if (i < data.length - 1) {
+                View separator = new View(this);
+                separator.setBackgroundColor(Color.DKGRAY);
+                GridLayout.LayoutParams sepParams = new GridLayout.LayoutParams();
+                sepParams.width = GridLayout.LayoutParams.MATCH_PARENT;
+                sepParams.height = 1; // 1 pixel high
+                sepParams.columnSpec = GridLayout.spec(0, 4); // Span across all 4 columns
+                sepParams.bottomMargin = 16; // Added vertical margin after the separator
+                separator.setLayoutParams(sepParams);
+                gridLayout.addView(separator);
+            }
         }
 
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            int position = parent.getChildAdapterPosition(view);
-            int column = position % 4;  // Assuming you have 4 columns
 
-            outRect.right = spacings[column];
-        }
+
     }
-
-
 
     private void togglePopupMenu(View view, boolean isArrowUp, ImageView arrowIcon, int menuRes) {
         if (!isArrowUp) {
