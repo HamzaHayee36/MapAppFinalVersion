@@ -1,5 +1,6 @@
 package com.example.mapapp;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +10,11 @@ import android.widget.PopupMenu;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class StaffDetailsActivity extends AppCompatActivity {
 
@@ -27,6 +33,9 @@ public class StaffDetailsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        // Initialize the RecyclerView with custom column width.
+        setupRecyclerView();
 
         // Profile icon toggle
         final ImageView profileArrowIcon = findViewById(R.id.arrow_icon);
@@ -50,6 +59,118 @@ public class StaffDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
+//    private void setupRecyclerView() {
+//        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+//
+//        List<String> dataList = new ArrayList<>();
+//        dataList.add("Name");
+//        dataList.add("Mobile");
+//        dataList.add("Department");
+//        dataList.add("Education");
+//        // ... add more data if needed ...
+//
+//        GridLayoutManager layoutManager = new GridLayoutManager(this, 6); // 6 spans
+//
+//        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+//            @Override
+//            public int getSpanSize(int position) {
+//                switch (position % 4) {
+//                    case 0: // First column
+//                    case 1: // Second column
+//                        return 1;
+//                    case 3: // Fourth column
+//                    case 2: // Third column (Department)
+//                        return 2; // Takes up 2 spans
+//                    default:
+//                        return 1; // Default
+//                }
+//            }
+//        });
+//
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(new CustomAdapter(dataList));
+//    }
+        private void setupRecyclerView() {
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+
+            List<String> dataList = new ArrayList<>();
+            // Header row
+            dataList.add("Name");
+            dataList.add("Mobile");
+            dataList.add("Department");
+            dataList.add("Education");
+
+            // Ali Raza
+            dataList.add("Ali Raza");
+            dataList.add("555 474 28374");
+            dataList.add("CS");
+            dataList.add("Mphil");
+
+            // Hassan
+            dataList.add("Hassan");
+            dataList.add("555 474 46782");
+            dataList.add("SE");
+            dataList.add("MSCS");
+
+            // Amna
+            dataList.add("Amna");
+            dataList.add("555 474 94782");
+            dataList.add("CS");
+            dataList.add("Mphil");
+
+            // Sadia
+            dataList.add("Sadia");
+            dataList.add("555 474 94782");
+            dataList.add("CS");
+            dataList.add("MSCS");
+
+            // Hussain
+            dataList.add("Hussain");
+            dataList.add("555 474 94782");
+            dataList.add("CS");
+            dataList.add("Mphil");
+
+            GridLayoutManager layoutManager = new GridLayoutManager(this, 6); // 4 spans since you have 4 columns
+
+            layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    switch (position % 4) {
+                        case 2: // Third column (Department)
+                        case 3: // Fourth column (Education)
+                            return 2;
+                        case 0: // Name
+                        case 1: // Mobile
+                            return 1; // Takes up 1 span
+                        default:
+                            return 1; // Default
+                    }
+                }
+            });
+
+            recyclerView.setLayoutManager(layoutManager);
+            int[] spacings = {-30, 0, 10, 10};  // Example spacings
+            recyclerView.addItemDecoration(new CustomItemDecoration(spacings));
+            recyclerView.setAdapter(new CustomAdapter(dataList));
+    }
+    public class CustomItemDecoration extends RecyclerView.ItemDecoration {
+        private int[] spacings;
+
+        public CustomItemDecoration(int[] spacings) {
+            this.spacings = spacings;
+        }
+
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+            int position = parent.getChildAdapterPosition(view);
+            int column = position % 4;  // Assuming you have 4 columns
+
+            outRect.right = spacings[column];
+        }
+    }
+
+
 
     private void togglePopupMenu(View view, boolean isArrowUp, ImageView arrowIcon, int menuRes) {
         if (!isArrowUp) {
