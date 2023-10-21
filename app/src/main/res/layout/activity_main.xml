@@ -46,14 +46,15 @@
         </RelativeLayout>
 
         <!-- Email and Password Fields -->
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:background="@drawable/edit_text_boundary"
-            android:paddingStart="16dp"
             android:hint="Email Address"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp" />
 
         <EditText
             android:id="@+id/passwordEditText"
