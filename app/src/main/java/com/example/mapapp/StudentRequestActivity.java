@@ -1,8 +1,10 @@
 package com.example.mapapp;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 
@@ -49,6 +51,41 @@ public class StudentRequestActivity extends AppCompatActivity {
                 isBellArrowUp = !isBellArrowUp;
             }
         });
+    }
+
+    public void onRequestButtonClick(View view) {
+        // Get references to all EditText fields
+        EditText degreeEditText = findViewById(R.id.degreeEditText);
+        EditText nameEditText = findViewById(R.id.nameEditText);
+        EditText rollNumberEditText = findViewById(R.id.rollnumberEditText);
+        EditText subjectEditText = findViewById(R.id.SubjectEditText);
+        EditText messageEditText = findViewById(R.id.MessageEditText);
+
+        // Check if any field is empty
+        if (isEmpty(degreeEditText) ||
+                isEmpty(nameEditText) ||
+                isEmpty(rollNumberEditText) ||
+                isEmpty(subjectEditText) ||
+                isEmpty(messageEditText)) {
+
+            // Show error popup
+            showPopup("Error", "Please fill all the fields.");
+        } else {
+            // Show success popup
+            showPopup("Success", "Request sent successfully.");
+        }
+    }
+
+    private boolean isEmpty(EditText editText) {
+        return editText.getText().toString().trim().isEmpty();
+    }
+
+    private void showPopup(String title, String message) {
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, null)
+                .show();
     }
 
     private void togglePopupMenu(View view, boolean isArrowUp, ImageView arrowIcon, int menuRes) {
